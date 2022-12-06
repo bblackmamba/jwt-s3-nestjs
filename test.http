@@ -1,0 +1,15 @@
+#####
+GET http://localhost:3000/api/v1/vibes?lat=10&lon=10&r=5
+Content-Type: application/json
+
+#####
+POST http://localhost:3000/api/v1/vibe
+Content-Type: application/json
+
+{
+    "coordinate": {
+        "latitude": 10,
+        "longitude": 10
+    },
+    "radius": 5
+}
