@@ -1,34 +1,30 @@
 version: '3.0'
 
 services:
-  main:
-    container_name: main
+  app:
     build:
       context: .
-    env_file:
-      - .env
-    volumes:
-      - .
-      - /node_modules
+      dockerfile: Dockerfile
     ports:
-      - "8999:8999"
-      - "9229:9229"
-    command: npm run start:dev
-    depends_on:
-      - postgres
+      - "3000:3000"
+    volumes:
+      - ./src:/app/src
+    networks:
+      - app-network
+
+  database:
+    image: postgres
     restart: always
-  postgres:
-    container_name: postgres
-    image: postgres:12
     env_file:
       - .env
-    environment:
-      PG_DATA: /var/lib/postgresql/data
     ports:
       - "5432:5432"
-    volumes:
-      - pgdata:/var/lib/postgresql/data
-    restart: always
+    networks:
+      - app-network
+
+networks:
+  app-network:
+    driver: bridge
 
 volumes:
-  pgdata:
+  node_modules:
