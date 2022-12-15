@@ -1,6 +1,6 @@
 module.exports = {
-  async up (queryInterface, Sequelize) {
-    await queryInterface.createTable('exercises-has-files', {
+  async up(queryInterface, Sequelize) {
+    await queryInterface.createTable('exercises_has_files', {
       id: {
         allowNull: false,
         autoIncrement: true,
@@ -32,7 +32,7 @@ module.exports = {
     });
   },
 
-  async down (queryInterface) {
-    await queryInterface.dropTable('exercises-has-files');
-  }
+  async down(queryInterface) {
+    await queryInterface.dropTable('exercises_has_files');
+  },
 };

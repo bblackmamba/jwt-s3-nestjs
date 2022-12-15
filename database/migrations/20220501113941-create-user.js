@@ -7,6 +7,10 @@ module.exports = {
         primaryKey: true,
         type: Sequelize.INTEGER.UNSIGNED,
       },
+      avatar: {
+        allowNull: true,
+        type: Sequelize.STRING,
+      },
       name: {
         allowNull: false,
         type: Sequelize.STRING,
@@ -15,7 +19,7 @@ module.exports = {
         allowNull: false,
         type: Sequelize.STRING,
       },
-      password_hash: {
+      passwordHash: {
         allowNull: false,
         type: Sequelize.STRING,
       },
@@ -23,7 +27,7 @@ module.exports = {
         allowNull: true,
         type: Sequelize.STRING,
       },
-      phone_number: {
+      phoneNumber: {
         allowNull: true,
         type: Sequelize.DATE,
       },

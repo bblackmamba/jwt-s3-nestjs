@@ -1,6 +1,6 @@
 module.exports = {
-  async up (queryInterface, Sequelize) {
-    await queryInterface.createTable('users-achievements', {
+  async up(queryInterface, Sequelize) {
+    await queryInterface.createTable('users_has_achievements', {
       id: {
         allowNull: false,
         autoIncrement: true,
@@ -51,7 +51,7 @@ module.exports = {
     });
   },
 
-  async down (queryInterface) {
-    await queryInterface.dropTable('users-achievements');
-  }
+  async down(queryInterface) {
+    await queryInterface.dropTable('users_has_achievements');
+  },
 };
