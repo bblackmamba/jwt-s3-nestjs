@@ -98,7 +98,7 @@ export default class UserService {
       const hashPassword: string = await bcrypt.hash(userDto.password, 5);
       const userCreationAttrs: UserCreationAttrs = {
         ...userDto,
-        password: hashPassword,
+        passwordHash: hashPassword,
         roleId: role.id,
         avatar: DEFAULT_AVATAR,
       };

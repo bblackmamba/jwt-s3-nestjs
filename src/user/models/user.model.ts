@@ -11,7 +11,7 @@ import CoachClient from './coache-client.model';
 export interface UserCreationAttrs {
   roleId: number;
   email: string;
-  password: string;
+  passwordHash: string;
   name: string;
   avatar: string,
 }

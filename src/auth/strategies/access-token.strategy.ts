@@ -1,5 +1,5 @@
 import {
-  ForbiddenException, Injectable, InternalServerErrorException, UnauthorizedException,
+  Injectable, InternalServerErrorException, UnauthorizedException,
 } from '@nestjs/common';
 import { PassportStrategy } from '@nestjs/passport';
 import { ExtractJwt, Strategy } from 'passport-jwt';
@@ -51,10 +51,6 @@ export default class AccessTokenStrategy extends PassportStrategy(Strategy, 'jwt
     );
     if (!user) {
       throw new InternalServerErrorException('Internal server error');
-    }
-
-    if (request.url !== this.logoutUrl) {
-      throw new ForbiddenException('User banned');
     }
 
     user.toJSON = () => {

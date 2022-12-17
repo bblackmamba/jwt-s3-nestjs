@@ -10,6 +10,10 @@ import AchievementModule from './achievment/achievement.module';
 import UserModule from './user/user.module';
 import AccessTokenGuard from './common/guards/access-token.guard';
 import RolesGuard from './common/guards/roles.guard';
+import CaslModule from './casl/casl.module';
+import TokenModule from './token/token.module';
+import RoleModule from './role/role.module';
+import AuthModule from './auth/auth.module';
 
 @Module({
   imports: [
@@ -18,11 +22,11 @@ import RolesGuard from './common/guards/roles.guard';
     }),
     SequelizeModule.forRoot({
       dialect: 'postgres',
-      host: process.env.POSTGRES_HOST || 'localhost',
-      port: Number(process.env.POSTGRES_PORT) || 5432,
-      username: process.env.POSTGRES_USER || 'postgres',
-      password: process.env.POSTGRES_PASSWORD || 'root',
-      database: process.env.POSTGRES_DB || 'nest-course',
+      host: process.env.POSTGRES_HOST,
+      port: Number(process.env.POSTGRES_PORT),
+      username: process.env.POSTGRES_USER,
+      password: process.env.POSTGRES_PASSWORD,
+      database: process.env.POSTGRES_DB,
       autoLoadModels: true,
       synchronize: true,
       omitNull: true,
@@ -30,9 +34,13 @@ import RolesGuard from './common/guards/roles.guard';
     UserModule,
     AchievementModule,
     MealModule,
+    TokenModule,
+    RoleModule,
+    AuthModule,
     ExerciseModule,
     ArticleModule,
     StatisticModule,
+    CaslModule,
   ],
   providers: [
     {

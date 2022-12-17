@@ -19,10 +19,11 @@
     "test:cov": "jest --coverage",
     "test:debug": "node --inspect-brk -r tsconfig-paths/register -r ts-node/register node_modules/.bin/jest --runInBand",
     "test:e2e": "jest --config ./test/jest-e2e.json",
-    "migrate": "npx sequelize-cli db:migrate",
-    "migrate:down": "npx sequelize-cli db:migrate:undo"
+    "migrate": "cd database && npx sequelize-cli db:migrate",
+    "migrate:down": "cd database && npx sequelize-cli db:migrate:undo"
   },
   "dependencies": {
+    "@aws-sdk/client-s3": "^3.231.0",
     "@casl/ability": "^6.3.2",
     "@nestjs/common": "^8.0.0",
     "@nestjs/config": "^2.2.0",
@@ -33,6 +34,7 @@
     "@nestjs/platform-express": "^8.0.0",
     "@nestjs/sequelize": "^8.0.0",
     "@nestjs/swagger": "^5.2.0",
+    "aws-sdk": "^2.1277.0",
     "bcryptjs": "^2.4.3",
     "class-transformer": "^0.5.1",
     "class-validator": "^0.13.2",

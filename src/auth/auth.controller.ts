@@ -7,7 +7,7 @@ import AccessTokenGuard from '../common/guards/access-token.guard';
 import { DefaultController, GetToken, Public } from '../common/decorators';
 import { StatusDto } from '../common/dto';
 import { CreateUserDto } from '../user/dto';
-import { AuthPayloadDto, LoginDto, CheckAccessDto } from './dto';
+import { AuthPayloadDto, LoginDto } from './dto';
 import { TokenDto, TokensDto } from '../token/dto';
 import { UnauthorizedException } from '../common/exceptions';
 import { UserExistsException, IncorrectAuthException } from './exceptions';
@@ -95,13 +95,5 @@ export default class AuthController {
   @Post('refresh')
   refreshTokens(@Body() tokenDto: TokenDto): Promise<TokensDto> {
     return this.authService.refreshTokens(tokenDto);
-  }
-
-  @ApiBearerAuth()
-  @UseGuards(AccessTokenGuard)
-  @HttpCode(HttpStatus.OK)
-  @Post('check-access')
-  checkAccess(@Body() checkAccessDto: CheckAccessDto): Promise<StatusDto> {
-    return this.authService.checkAccess(checkAccessDto);
   }
 }

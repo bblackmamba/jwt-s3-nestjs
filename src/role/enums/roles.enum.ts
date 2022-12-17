@@ -1,7 +1,7 @@
 enum RolesEnum {
   Admin = 'admin',
   Coach = 'coach',
-  User = 'users',
+  User = 'user',
 }
 
 export default RolesEnum;

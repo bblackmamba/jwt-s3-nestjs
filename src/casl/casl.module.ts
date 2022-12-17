@@ -1,9 +1,9 @@
 import { Module, Global } from '@nestjs/common';
-// import { CaslAbilityFactory } from './casl-ability.factory';
+import { CaslAbilityFactory } from './casl-ability.factory';
 
 @Global()
 @Module({
-  // providers: [CaslAbilityFactory],
-  // exports: [CaslAbilityFactory],
+  providers: [CaslAbilityFactory],
+  exports: [CaslAbilityFactory],
 })
 export default class CaslModule {}
