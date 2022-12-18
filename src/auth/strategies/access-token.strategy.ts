@@ -24,8 +24,6 @@ export default class AccessTokenStrategy extends PassportStrategy(Strategy, 'jwt
     });
   }
 
-  logoutUrl = `${process.env.GLOBAL_PREFIX}/auth/logout`;
-
   // eslint-disable-next-line class-methods-use-this
   async validate(request: AuthRequest, payload: JwtPayload) {
     const token = await Token.findOne({
