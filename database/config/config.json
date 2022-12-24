@@ -1,0 +1,23 @@
+{
+  "development": {
+    "username": "selectel",
+    "password": "selectel",
+    "database": "nest",
+    "host": "localhost",
+    "dialect": "postgres"
+  },
+  "test": {
+   "username": "selectel",
+    "password": "postgres",
+    "database": "nest",
+    "host": "localhost",
+    "dialect": "postgres"
+  },
+    "production": {
+      "username": "selectel",
+      "password": "postgres",
+      "database": "nest",
+      "host": "127.0.0.1",
+      "dialect": "postgres"
+  }
+}
